@@ -1,0 +1,24 @@
+package ex4package;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class accesslink {
+    public static void main(String[] args) throws InterruptedException {
+        System.setProperty("webdriver.gecko.driver", "C:\\geckodriver.exe");
+        String baseUrl = "https://www.google.com/";
+        WebDriver driver = new ChromeDriver();
+        
+        driver.get(baseUrl);
+        WebElement n = driver.findElement(By.linkText("Gmail"));
+        n.click();
+        
+        System.out.println("Current page title: " + driver.getTitle());
+        WebElement m = driver.findElement(By.partialLinkText("Sign"));
+        
+        Thread.sleep(5000);
+        driver.quit();
+    }
+}
