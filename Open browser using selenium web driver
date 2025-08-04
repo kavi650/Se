@@ -1,0 +1,36 @@
+package ex2package;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class ex2class {
+
+    public static void main(String[] args) throws InterruptedException {
+
+        System.setProperty("webdriver.chrome.driver", "/home/user/Downloads/chromedriver");
+
+        String expectedTitle = "Google";
+        String actualTitle = "";
+
+        WebDriver driver = new ChromeDriver();
+
+        driver.navigate().to("http://www.google.com/");
+        driver.manage().window().maximize();
+
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("scrollBy(0, 5000)");
+
+        actualTitle = driver.getTitle();
+
+        if (actualTitle.contentEquals(expectedTitle)) {
+            System.out.println("Test Passed");
+        } else {
+            System.out.println("Test Failed");
+        }
+
+        Thread.sleep(5000);
+        driver.close();
+    }
+}
