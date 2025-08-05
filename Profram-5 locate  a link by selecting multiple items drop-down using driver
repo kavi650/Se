@@ -1,0 +1,22 @@
+package dropdowupackage;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+public class Dropdown {
+
+    public static void main(String[] args) {
+        System.setProperty("webdriver.chrome.driver", "/home/user/Downloads/chromedriver");
+        
+        WebDriver driver = new ChromeDriver();
+        driver.get("https://jsbin.com/osebed/2");
+        
+        Select fruits = new Select(driver.findElement(By.id("f")));
+        fruits.selectByVisibleText("Banana");
+        fruits.selectByIndex(1);
+        
+        driver.quit();
+    }
+}
