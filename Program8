@@ -1,47 +1,39 @@
 package ex8implicitwait;
 
-import java.time.Duration:
+import java.time.Duration;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 
-import org.openqa.selenium. WebDriver;
+public class Ex8Pack {
+    public static void main(String[] args) {
 
-import org.openqa.selenium.chrome.ChromeDriver,
+        // Set path to ChromeDriver
+        System.setProperty("webdriver.chrome.driver", "/home/user/Downloads/chromedriver");
 
-public class ex8pack (
+        // Launch Chrome
+        WebDriver driver = new ChromeDriver();
 
-public static void main(String[] args) {
+        // Set implicit wait
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(50));
 
-System.setProperty("webdriver.chrome.driver".
+        // Expected title
+        String eTitle = "Google";
 
-"/home/user/Downloads/chromedriver");
+        // Open Google
+        driver.get("https://www.google.com");
+        driver.manage().window().maximize();
 
-WebDriver driver = new ChromeDriver():
+        // Actual title
+        String aTitle = driver.getTitle();
 
-driver.manage().timeouts().implicitly Wait (Duration.ofSeconds(50000));
+        // Compare titles
+        if (aTitle.equals(eTitle)) {
+            System.out.println("Test Passed");
+        } else {
+            System.out.println("Test Failed");
+        }
 
-String eTitle = "Google":
-
-String aTitle":
-
-driver.get("https://www.google.com"); driver.manage().window().maximize();
-
-aTitle driver.getTitle():
-
-if (aTitle.equals(eTitle))
-
-{
-
-System.out.println("Test Passed");
-
+        // Close browser
+        driver.close();
+    }
 }
-
-else
-
-(
-
-System.out.println("Test failed"); }
-
-driver.close();
-
-}
-
-)
