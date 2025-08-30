@@ -1,0 +1,25 @@
+package ex7sublogin:
+
+import org.openqa.selenium. By:
+
+import org.openqa.selenium.Keys,
+
+import org.openqa.selenium. WebDriver;
+
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class login (
+
+public static void main(String[] args) {
+
+System.setProperty("webdriver.chrome.driver","/home/user/Downloads/chromedriver"):
+
+WebDriver driver new ChromeDriver():
+
+driver.get("https://www.google.com");
+
+driver.findElement(By.link Text("Sign in")).click():
+
+driver.findElement(By.id("identifierld")).sendKeys("abc@gmail.com");
+
+driver.findElement(By.id("identifierld")) sendKeys(Keys.ESCAPE);
