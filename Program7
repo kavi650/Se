@@ -1,25 +1,32 @@
-package ex7sublogin:
+package ex7sublogin;
 
-import org.openqa.selenium. By:
-
-import org.openqa.selenium.Keys,
-
-import org.openqa.selenium. WebDriver;
-
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class login (
+public class Login {
+    public static void main(String[] args) {
 
-public static void main(String[] args) {
+        // Set path to chromedriver
+        System.setProperty("webdriver.chrome.driver", "/home/user/Downloads/chromedriver");
 
-System.setProperty("webdriver.chrome.driver","/home/user/Downloads/chromedriver"):
+        // Launch Chrome
+        WebDriver driver = new ChromeDriver();
 
-WebDriver driver new ChromeDriver():
+        // Open Google
+        driver.get("https://www.google.com");
 
-driver.get("https://www.google.com");
+        // Click on "Sign in"
+        driver.findElement(By.linkText("Sign in")).click();
 
-driver.findElement(By.link Text("Sign in")).click():
+        // Enter email
+        driver.findElement(By.id("identifierId")).sendKeys("abc@gmail.com");
 
-driver.findElement(By.id("identifierld")).sendKeys("abc@gmail.com");
+        // Example: Press ESCAPE key
+        driver.findElement(By.id("identifierId")).sendKeys(Keys.ESCAPE);
 
-driver.findElement(By.id("identifierld")) sendKeys(Keys.ESCAPE);
+        // Optional: Close browser
+        // driver.quit();
+    }
+}
