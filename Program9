@@ -1,40 +1,46 @@
-PROGRAM:
-
 package expli;
 
 import java.time.Duration;
-
-import org.openqa.selenium. WebDriver;
-
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
-import org.openqa.selenium.support.ui. WebDriver Wait;
+public class Expliclass {
+    public static void main(String[] args) {
 
-public class expliclass {
+        // Set path to ChromeDriver
+        System.setProperty("webdriver.chrome.driver", "/home/user/Downloads/chromedriver");
 
-public static void main(String[] args) {
+        // Launch Chrome
+        WebDriver driver = new ChromeDriver();
 
-System.setProperty("webdriver.chrome.driver","/home/user/Downloads/chromedriver");
+        // Explicit wait (not used in this simple example, but initialized)
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(50));
 
-WebDriver driver = new ChromeDriver();
+        // Expected title
+        String eTitle = "Google";
 
-WebDriverWait wait = new WebDriver Wait(driver, Duration.ofSeconds(50));
+        // Actual title
+        String aTitle = "";
 
-String eTitle = "Google";
+        // Open Google
+        driver.get("https://www.google.com");
+        driver.manage().window().maximize();
 
-String aTitle = "";
+        // Get page title
+        aTitle = driver.getTitle();
 
-driver.get("https//www.google.com");
+        // Compare titles
+        if (aTitle.equals(eTitle)) {
+            System.out.println("Test Passed");
+        } else {
+            System.out.println("Test Failed");
+        }
 
-driver.manage().window().maximize();
-
-aTitle driver.getTitle();
-
-if(aTitle.equals(eTitle))
-
-{
-
-System.out.println("Test passed");
+        // Close browser
+        driver.close();
+    }
+}System.out.println("Test passed");
 
 }
 
