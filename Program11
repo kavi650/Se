@@ -1,0 +1,37 @@
+package ex1llocators;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class locators {
+
+    public static void main(String[] args) {
+
+        System.setProperty("webdriver.chrome.driver","/home/user/Downloads/chromedriver");
+
+        String baseUrl = "https://en.wikipedia.org/wiki/Main_Page";
+        WebDriver driver = new ChromeDriver();
+        driver.get(baseUrl);
+        driver.manage().window().maximize();
+
+        WebElement e = driver.findElement(By.className("mw-headline"));
+        System.out.println(e.getText());
+
+        WebElement a = driver.findElement(By.linkText("Create account"));
+        a.click();
+
+        WebElement n = driver.findElement(By.className("mw-ui-input"));
+        n.sendKeys("Student1234rewq");
+
+        WebElement m = driver.findElement(By.id("wpPassword2"));
+        m.sendKeys("JavaScript");
+
+        WebElement k = driver.findElement(By.id("wpRetype"));
+        k.sendKeys("JavaScript");
+
+        WebElement j = driver.findElement(By.name("email"));
+        j.sendKeys("JavaScript@gmail.com");
+    }
+}
