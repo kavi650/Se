@@ -1,0 +1,47 @@
+package ex8implicitwait;
+
+import java.time.Duration:
+
+import org.openqa.selenium. WebDriver;
+
+import org.openqa.selenium.chrome.ChromeDriver,
+
+public class ex8pack (
+
+public static void main(String[] args) {
+
+System.setProperty("webdriver.chrome.driver".
+
+"/home/user/Downloads/chromedriver");
+
+WebDriver driver = new ChromeDriver():
+
+driver.manage().timeouts().implicitly Wait (Duration.ofSeconds(50000));
+
+String eTitle = "Google":
+
+String aTitle":
+
+driver.get("https://www.google.com"); driver.manage().window().maximize();
+
+aTitle driver.getTitle():
+
+if (aTitle.equals(eTitle))
+
+{
+
+System.out.println("Test Passed");
+
+}
+
+else
+
+(
+
+System.out.println("Test failed"); }
+
+driver.close();
+
+}
+
+)
