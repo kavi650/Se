@@ -1,0 +1,53 @@
+PROGRAM:
+
+package expli;
+
+import java.time.Duration;
+
+import org.openqa.selenium. WebDriver;
+
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import org.openqa.selenium.support.ui. WebDriver Wait;
+
+public class expliclass {
+
+public static void main(String[] args) {
+
+System.setProperty("webdriver.chrome.driver","/home/user/Downloads/chromedriver");
+
+WebDriver driver = new ChromeDriver();
+
+WebDriverWait wait = new WebDriver Wait(driver, Duration.ofSeconds(50));
+
+String eTitle = "Google";
+
+String aTitle = "";
+
+driver.get("https//www.google.com");
+
+driver.manage().window().maximize();
+
+aTitle driver.getTitle();
+
+if(aTitle.equals(eTitle))
+
+{
+
+System.out.println("Test passed");
+
+}
+
+else
+
+{
+
+System.out.println("Test failed");
+
+}
+
+driver.close();
+
+}
+
+}
