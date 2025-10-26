@@ -9,7 +9,7 @@ public class ex2class {
 
     public static void main(String[] args) throws InterruptedException {
 
-        System.setProperty("webdriver.chrome.driver", "/home/user/skasc/Downloads/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "/home/user/Downloads/chromedriver");
 
         String expectedTitle = "Google";
         String actualTitle = "";
