@@ -11,6 +11,7 @@ public class Dropdown {
         System.setProperty("webdriver.chrome.driver", "/home/user/Downloads/chromedriver");
         
         WebDriver driver = new ChromeDriver();
+        driver.get("file:/home/downloads/eclipse/19MSS/pro5.html");
         driver.get("https://jsbin.com/osebed/2");
         
         Select fruits = new Select(driver.findElement(By.id("f")));
